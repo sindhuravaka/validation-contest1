@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="gradient map.svg"
+   inkscape:version="0.91 r13725"
+   version="1.1"
+   id="svg3583"
+   height="600"
+   width="600">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#a7cdb8"
+     bordercolor="#ffffff"
+     borderopacity="0.337254902"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.8966666666666666"
+     inkscape:cx="300"
+     inkscape:cy="300"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg3583"
+     showgrid="false"
+     inkscape:object-nodes="true"
+     inkscape:object-paths="false"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="true"
+     guidecolor="#ffffff"
+     guideopacity="0.8235294118"
+     borderlayer="true"
+     inkscape:showpageshadow="false"
+     guidehicolor="#8dfeff"
+     guidehiopacity="1" />
+  <defs
+     id="defs3585">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5845">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5847" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop5849" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter4147-4"
+       inkscape:label="gradient map">
+      <feFlood
+         id="feFlood4710"
+         flood-color="rgb(255,0,0)"
+         result="result30" />
+      <feFlood
+         id="feFlood4712"
+         flood-color="rgb(254,152,0)"
+         result="result29" />
+      <feFlood
+         id="feFlood4714"
+         flood-color="rgb(203,254,0)"
+         result="result28" />
+      <feFlood
+         id="feFlood4716"
+         flood-color="rgb(50,254,0)"
+         result="result26" />
+      <feFlood
+         id="feFlood4718"
+         flood-color="rgb(0,254,101)"
+         result="result27" />
+      <feFlood
+         id="feFlood4720"
+         flood-color="rgb(0,254,254)"
+         result="result25" />
+      <feFlood
+         id="feFlood4722"
+         flood-color="rgb(0,101,254)"
+         result="result18" />
+      <feFlood
+         id="feFlood4724"
+         flood-color="rgb(50,0,254)"
+         result="result16" />
+      <feFlood
+         id="feFlood4726"
+         flood-color="rgb(203,0,254)"
+         result="result14" />
+      <feFlood
+         id="feFlood4728"
+         flood-color="rgb(254,0,152)"
+         result="result2" />
+      <feColorMatrix
+         id="feColorMatrix4730"
+         in="SourceGraphic"
+         type="luminanceToAlpha"
+         result="result1" />
+      <feComponentTransfer
+         id="feComponentTransfer4732"
+         result="result24">
+        <feFuncR
+           id="feFuncR4734"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4736"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4738"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4740"
+           type="linear"
+           slope="10"
+           intercept="-9" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4742"
+         in="result1"
+         result="result23">
+        <feFuncR
+           id="feFuncR4744"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4746"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4748"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4750"
+           type="linear"
+           slope="10"
+           intercept="-8" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4752"
+         in="result1"
+         result="result22">
+        <feFuncR
+           id="feFuncR4754"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4756"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4758"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4760"
+           type="linear"
+           slope="10"
+           intercept="-7" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4762"
+         in="result1"
+         result="result21">
+        <feFuncR
+           id="feFuncR4764"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4766"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4768"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4770"
+           type="linear"
+           slope="10"
+           intercept="-6" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4772"
+         in="result1"
+         result="result20">
+        <feFuncR
+           id="feFuncR4774"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4776"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4778"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4780"
+           type="linear"
+           slope="10"
+           intercept="-5" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4782"
+         in="result1"
+         result="result19">
+        <feFuncR
+           id="feFuncR4784"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4786"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4788"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4790"
+           type="linear"
+           slope="10"
+           intercept="-4" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4792"
+         in="result1"
+         result="result17">
+        <feFuncR
+           id="feFuncR4794"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4796"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4798"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4800"
+           type="linear"
+           slope="10"
+           intercept="-3" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4802"
+         in="result1"
+         result="result15">
+        <feFuncR
+           id="feFuncR4804"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4806"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4808"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4810"
+           type="linear"
+           slope="10"
+           intercept="-2" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4812"
+         in="result1"
+         result="result13">
+        <feFuncR
+           id="feFuncR4814"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4816"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4818"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4820"
+           type="linear"
+           slope="10"
+           intercept="-1" />
+      </feComponentTransfer>
+      <feComponentTransfer
+         id="feComponentTransfer4822"
+         in="result1"
+         result="result3">
+        <feFuncR
+           id="feFuncR4824"
+           type="identity" />
+        <feFuncG
+           id="feFuncG4826"
+           type="identity" />
+        <feFuncB
+           id="feFuncB4828"
+           type="identity" />
+        <feFuncA
+           id="feFuncA4830"
+           type="linear"
+           slope="10" />
+      </feComponentTransfer>
+      <feComposite
+         id="feComposite4832"
+         in2="result3"
+         result="result4"
+         operator="in"
+         in="result2" />
+      <feComposite
+         id="feComposite4834"
+         in2="result13"
+         result="result5"
+         operator="in"
+         in="result14" />
+      <feComposite
+         id="feComposite4836"
+         result="result6"
+         operator="in"
+         in2="result15"
+         in="result16" />
+      <feComposite
+         id="feComposite4838"
+         in2="result17"
+         result="result7"
+         operator="in"
+         in="result18" />
+      <feComposite
+         id="feComposite4840"
+         result="result8"
+         operator="in"
+         in2="result19"
+         in="result25" />
+      <feComposite
+         id="feComposite4842"
+         in2="result20"
+         result="result9"
+         operator="in"
+         in="result27" />
+      <feComposite
+         id="feComposite4844"
+         in2="result21"
+         result="result10"
+         operator="in"
+         in="result26" />
+      <feComposite
+         id="feComposite4846"
+         in2="result22"
+         result="result11"
+         operator="in"
+         in="result28" />
+      <feComposite
+         id="feComposite4848"
+         in2="result23"
+         result="result12"
+         operator="in"
+         in="result29" />
+      <feComposite
+         id="feComposite4850"
+         in2="result24"
+         operator="in"
+         in="result30"
+         result="result31" />
+      <feComposite
+         id="feComposite4858"
+         in2="SourceGraphic"
+         in="result30"
+         result="result32"
+         operator="in" />
+      <feMerge
+         id="feMerge4860">
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4862"
+           in="result32" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4864"
+           in="result4" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4866"
+           in="result5" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4868"
+           in="result6" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4870"
+           in="result7" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4872"
+           in="result8" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4874"
+           in="result9" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4876"
+           in="result10" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4878"
+           in="result11" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4880"
+           in="result12" />
+        <feMergeNode
+           inkscape:collect="always"
+           id="feMergeNode4882"
+           in="result31" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5845"
+       id="linearGradient5851"
+       x1="0"
+       y1="4.547473508864641e-013"
+       x2="600"
+       y2="4.547473508864641e-013"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <metadata
+     id="metadata3588">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:date>2016</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Lazur URH</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description>A gradient map filter idea. 10 flood fills fading into eachother along the object's luminancy.</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#linearGradient5851);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;filter:url(#filter4147-4)"
+     d="m 0,4.547473508864642e-13 600,0 0,599.9999999999995452526491135358 -600,0 z"
+     id="rect10308"
+     inkscape:connector-curvature="0" />
+</svg>

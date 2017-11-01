@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+	#canvas {
+	  display:block;
+	  margin: 0 auto;
+	  margin-top: 10px;
+	  border-radius: 10px;
+	  border-bottom:35px solid #660000;
+	  box-shadow: 3px 3px 0px grey;
+	  padding-top:25px;
+	  background-image: url("Halloween-brick-wall-background-vector-01.jpg");
+	}
+	
+</style>
+<script type="text/javascript" src="paddle.js"></script>
+<script type="text/javascript" src="ball.js"></script>	
+<script type="text/javascript" src="brick.js"></script>			
+<script type="text/javascript">
+	var canvas;
+	var ctx;
+	
+	var paddle;
+	var PADDLE_WIDTH;
+	var PADDLE_HEIGHT;
+	var MARGIN;
+	
+	var ball;
+	var BALL_WIDTH;
+	var BALL_HEIGHT;
+	
+	var bricks;
+	var NROWS;
+	var NCOLS;
+	var BRICK_WIDTH;
+	var BRICK_HEIGHT;
+	var PADDING;
+	var PADDLEX
+	
+	var rightDown = false;
+	var leftDown = false;
+	var releaseDown = false;
+	var resetDown = false;
+	
+	var lives;
+	var score = 0;
+	var count;
+	var count1 = 0 ;
+	var img=new Image();
+    img.src="ball2.jpg"
+	var obj={
+			count2:0
+	        };
+		
+	function init() {
+		canvas = document.getElementById('canvas');
+		ctx = canvas.getContext('2d');
+		
+		PADDLE_WIDTH = 120;
+		PADDLE_HEIGHT = 10;
+		MARGIN = 30;
+
+		paddle = new Paddle(canvas.width / 2 - (PADDLE_WIDTH / 2),
+							canvas.height - PADDLE_HEIGHT - MARGIN,
+							PADDLE_WIDTH,
+							PADDLE_HEIGHT,
+							'yellow');
+		
+		BALL_WIDTH = 8;
+		BALL_HEIGHT = 10;
+		ball = new Ball(canvas.width / 2, canvas.height/ 2, BALL_WIDTH, img);
+		
+		NROWS = 5;
+		NCOLS = 6;
+		count=NROWS*NCOLS;
+		BRICK_WIDTH = 50;
+		BRICK_HEIGHT = 20;
+		PADDING = 10;
+		var row = Math.floor(Math.random() * NROWS);
+        var column = Math.floor(Math.random() * NCOLS);
+		
+		localStorage.setItem("r",row);
+		
+		localStorage.setItem("c",column);
+		console.log("the value of i and j is " + row + " and " + column);
+		//initialises a 2D array of bricks	
+		bricks = new Array(NROWS);
+		/*for (var i = 0; i < NROWS; i++) {
+			bricks[i] = new Array(NCOLS);
+			for (var j = 0; j < NCOLS; j++) {
+			  if(row==i && column==j)
+			  {
+			  //console.log("entered the value of i and j is " + i + " and " + i);
+			//console.log("entered the value of row and column is " + row + " and " + column);	
+			     bricks[i][j] = new Brick(((BRICK_WIDTH + PADDING) * j)+30,
+										 ((BRICK_HEIGHT + PADDING) * i) + MARGIN,
+										 BRICK_WIDTH,
+										 BRICK_HEIGHT,
+										 '#8B008B',i,j,row,column,count1);
+			
+				 
+		      } 
+			  else if(j%2==0)
+			  {
+			     bricks[i][j] = new Brick(((BRICK_WIDTH + PADDING) * j)+30,
+										 ((BRICK_HEIGHT + PADDING) * i) + MARGIN,
+										 BRICK_WIDTH,
+										 BRICK_HEIGHT,
+										 '#FFD700',i,j,row,column,count1);
+			  }
+			  else
+			  {
+			  // console.log("entered the value of i and j is entred else " + i + " and " + i);
+			//console.log("entered the value of row and column is entred else " + row + " and " + column);
+				bricks[i][j] = new Brick(((BRICK_WIDTH + PADDING) * j)+30,
+										 ((BRICK_HEIGHT + PADDING) * i) + MARGIN,
+										 BRICK_WIDTH,
+										 BRICK_HEIGHT,
+										 '#FFFFFF',i,j,row,column,count1);
+			  }
+			}
+			
+		}*/
+		for (var i =NROWS; i > 0; i--) {
+			bricks[i] = new Array(NCOLS);
+			for (var j = 0; j < i; j++) {
+			  if(row==i && column==j)
+			  {
+			  //console.log("entered the value of i and j is " + i + " and " + i);
+			//console.log("entered the value of row and column is " + row + " and " + column);	
+			     bricks[i][j] = new Brick(((BRICK_WIDTH + PADDING) * j)+30,
+										 ((BRICK_HEIGHT + PADDING) * i) + MARGIN,
+										 BRICK_WIDTH,
+										 BRICK_HEIGHT,
+										 '#8B008B',i,j,row,column,count1);
+			
+				 
+		      } 
+			  else if(j%2==0)
+			  {
+			     bricks[i][j] = new Brick(((BRICK_WIDTH + PADDING) * j)+30,
+										 ((BRICK_HEIGHT + PADDING) * i) + MARGIN,
+										 BRICK_WIDTH,
+										 BRICK_HEIGHT,
+										 '#FFD700',i,j,row,column,count1);
+			  }
+			  else
+			  {
+			  // console.log("entered the value of i and j is entred else " + i + " and " + i);
+			//console.log("entered the value of row and column is entred else " + row + " and " + column);
+				bricks[i][j] = new Brick(((BRICK_WIDTH + PADDING) * j)+30,
+										 ((BRICK_HEIGHT + PADDING) * i) + MARGIN,
+										 BRICK_WIDTH,
+										 BRICK_HEIGHT,
+										 '#FFFFFF',i,j,row,column,count1);
+			  }
+			}
+			
+		}
+		ball.dx = 0;
+		
+		lives = 1;
+		// livesEle = document.getElementById('lives');
+		//livesEle.innerHTML = lives;
+		 
+		score = 0;
+		//scoreEle = document.getElementById('score');
+		//scoreEle.innerHTML = score;
+		
+		loop();
+	}
+	function line(){
+ctx.beginPath(); 
+  // Staring point (10,45)
+   ctx.moveTo(500,0);
+  // End point (180,47)
+  ctx.lineTo(500,520);
+  // Make the line visible
+  ctx.strokeStyle = 'green';
+      ctx.stroke();
+ctx.closePath();
+}
+
+function life()
+		{
+          ctx.font = "15px Verdana";
+		  ctx.fillStyle = "yellow";
+		  ctx.fillText("Lives :"+lives,515,60); 
+		}	
+function scores()
+		{
+          ctx.font = "15px Verdana";
+		  ctx.fillStyle = "white";
+		  console.log("the value of score in html is " +score);
+		  ctx.fillText("Score : "+score,515,40); 
+		}	
+	
+	function loop() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		requestAnimationFrame(loop);
+		
+		if(lives >= 0) {
+			//livesEle.innerHTML = lives;
+			
+		//	scoreEle.innerHTML = score;
+			
+			// prevents the ball from leaving the stage
+			ball.bound(canvas);
+			
+			// resets the ball and decrements lives if
+			// it passes off the bottom of the screen
+			if(ball.y - (ball.radius * 2) >= canvas.height) {
+				paddle.x = canvas.width / 2 - (PADDLE_WIDTH / 2);
+				
+				ball.x = canvas.width / 2;
+				ball.y = canvas.height/ 2;
+				
+				ball.dx = 0;
+				
+				lives--;
+			}
+			
+			// ball/paddle collision detection
+			paddle.collide(ball);
+			line();
+			life();
+			scores();
+			
+			// ball/brick collision detection
+			for (var i = NROWS; i > 0; i--) {
+				for (var j = 0; j < i; j++) {
+					if(bricks[i][j].collide(ball) == true) {
+						score++ ;
+						
+                      score = score + obj.count2;						
+					obj.count2 = 0;
+					}
+				}
+			}
+			
+			
+			//console.log("score and count " +score+ " and " + count +"  " +count1);
+			if(count==score)
+			{
+			    ctx.fillStyle = '#FFFFFF';
+			ctx.font = '64px Arial';
+			ctx.fillText('Congratulations!!', 150, 100);
+			ctx.font = '18px Arial';
+			ctx.fillText('click on play to continue...', 165, 150);
+			
+			}
+			
+			// update ball coords
+			ball.x += ball.dx;
+			ball.y += ball.dy;
+			
+			
+			// update paddle coords based on user input
+			if(leftDown == true && paddle.x >= 0) {
+				paddle.x -= paddle.dx;
+			}
+			if(rightDown == true && paddle.x + paddle.width <= canvas.width) {
+				paddle.x += paddle.dx;
+			}
+			
+			//draw
+			ball.draw(ctx);
+			paddle.draw(ctx);
+			for (i=NROWS; i > 0; i--) {
+				for (j=0; j < i; j++) {
+					if(bricks[i][j].state == true) {
+						bricks[i][j].draw(ctx);
+					}
+				}
+			}
+		}
+		else {
+			// draw game over text and restart instructions
+			ctx.fillStyle = '#FFFFFF';
+			ctx.font = '64px Arial';
+			ctx.fillText('You lose', 150, 100);
+			ctx.font = '18px Arial';
+			ctx.fillText('Press [r] to start again', 165, 150);
+			
+			// reset all game elements
+			if(resetDown == true) {
+				lives = 2;
+				score = 0;
+				
+				for (i=0; i < NROWS; i++) {
+					for (j=0; j < NCOLS; j++) {
+							bricks[i][j].state = true;
+					}
+				}
+			}
+		}
+	}
+	
+	function onKeyDown(evt) {
+	  if (evt.keyCode == 39) rightDown = true;
+	  else if (evt.keyCode == 37) leftDown = true;
+	  else if (evt.keyCode == 38) leftDown = true;
+	  else if (evt.keyCode == 82) resetDown = true;
+	}
+	
+	function onKeyUp(evt) {
+	  if (evt.keyCode == 39) rightDown = false;
+	  else if (evt.keyCode == 37) leftDown = false;
+	  else if (evt.keyCode == 38) leftDown = false;
+	  else if (evt.keyCode == 82) resetDown = false;
+	}
+	function mouseMoveHandler(e)
+    {
+	var relativeX=e.clientX.offsetLeft;
+	if(relativeX>0 &&relativeX<canvas.width)
+	{
+		if((relativeX-PADDLE_WIDTH/2>0) &&(relativeX-PADDLE_WIDTH/2<=(canvas.width-PADDLE_WIDTH)))
+		{
+			paddleX=relativeX-PADDLE_WIDTH/2;
+		}
+	}
+}
+document.addEventListener("mousemove",mouseMoveHandler,true);
+	
+window.onresize = function() {
+ console.log('resize');
+}
+		
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Breakout</title>
+</head>
+
+<body onload="init()" onkeydown="onKeyDown(event)" onkeyup="onKeyUp(event)" >
+	<h2 align="center">Breakout</h2>
+	<canvas id="canvas" width="600" height="400">
+			Canvas is not supported
+	</canvas>
+	
+	
+
+</body>
+</html>
